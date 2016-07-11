@@ -1,0 +1,12 @@
+logging:
+  path: ./target/log
+  file: debug.log
+  level:
+    org.glycoinfo: DEBUG
+    org.glytoucan: DEBUG
+spring:
+    triplestore:
+        driverClassName: virtuoso.jdbc4.Driver
+        url: jdbc:virtuoso://test.ts.glytoucan.org:1111
+        username: dba
+        password: dba
