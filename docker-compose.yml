@@ -1,0 +1,15 @@
+version: '2'
+services:
+  api:
+    image: maven:3.3.9-jdk-8
+    volumes:
+      - ${HOME}/glytoucan/maven:/root/.m2
+      - ${HOME}/glytoucan/${PROJECT_NAME}/logs:/root/glytoucan/${PROJECT_NAME}/logs
+      - ${WORKSPACE_PARENT}/${WORKSPACE}/${BACKEND_PROJECT_PARENT}:/workspace
+      - /etc/localtime:/etc/localtime
+    working_dir: /workspace/${PROJECT_NAME}
+    command: mvn -U -DskipTests=true spring-boot:run
+    environment:
+     - SPRING_TRIPLESTORE_PASSWORD
+     - SPRING_TRIPLESTORE_URL
+    restart: never

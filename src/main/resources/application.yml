@@ -1,5 +1,4 @@
 logging:
-  path: ./target/log/
-  file: output.log
+  path: $HOME/glytoucan/wurcstotopology/logs
   level:
     ROOT: ERROR
