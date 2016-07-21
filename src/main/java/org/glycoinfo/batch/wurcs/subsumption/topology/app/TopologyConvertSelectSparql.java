@@ -40,7 +40,7 @@ public class TopologyConvertSelectSparql extends SelectSparqlBean implements Gly
     this.prefix = "PREFIX glycan: <http://purl.jp/bio/12/glyco/glycan#>\n"
         + "PREFIX glytoucan:  <http://www.glytoucan.org/glyco/owl/glytoucan#>\n"
         + "Prefix rocs: <http://www.glycoinfo.org/glyco/owl/relation#>\n";
-    this.select = "DISTINCT ?" + SaccharideURI + " ?" + AccessionNumber + " ?" + Sequence + " ?" + GlycanSequenceURI;
+    this.select = "DISTINCT ?" + SaccharideURI + " ?" + AccessionNumber + " ?" + Sequence;
     this.from = "FROM <http://rdf.glytoucan.org/core>\n" + "FROM <http://rdf.glytoucan.org/sequence/wurcs>\n"
         + "FROM <http://rdf.glytoucan.org/topology>";
   }

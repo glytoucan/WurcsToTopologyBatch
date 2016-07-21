@@ -47,7 +47,7 @@ public class TopologyConverter implements SparqlEntityConverter<SparqlEntity> {
     
     if (null == sequence && StringUtils.isNotBlank(e.getValue(SparqlItemWriter.Pass))) {
       // error occurred, cannot register.
-      return e;
+      return null;
     }
 
     try {
@@ -61,6 +61,9 @@ public class TopologyConverter implements SparqlEntityConverter<SparqlEntity> {
       throw se;
     }
 
+    if (e.getValue(Saccharide.PrimaryId).equals(topAccessionNumber))
+      return null;
+    
     // original accession number => PrimaryId_1
     e.setValue(Glycosidic_topology.PrimaryId_1, e.getValue(Saccharide.PrimaryId));
 

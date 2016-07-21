@@ -54,21 +54,21 @@ public class TopologyConverterTest {
     converter.convert(e);
   }
   
-  @Test
-  @Transactional
-  public void testG00055MO() throws SparqlException {
-    SparqlEntity e = new SparqlEntity();
-    e.setValue(Saccharide.PrimaryId, "G00055MO");
-    e.setValue(GlycoSequence.Sequence, "WURCS=2.0/2,2,1/[a2122h-1b_1-5_2*NCC/3=O][a2112h-1b_1-5]/1-2/a4-b1");
-    // TODO get the proper topology of this structure, but for now confirm the id's are there.
-    e.setValue(ConvertInsertSparql.ConvertedSequence, "WURCS=2.0/2,2,1/[a2122h-1b_1-5_2*NCC/3=O][a2112h-1b_1-5]/1-2/a4-b1");
-    SparqlEntity result = converter.convert(e);
-
-    logger.debug(result);
-    // original accession number => PrimaryId_1
-    Assert.assertNotNull(result.getValue(Glycosidic_topology.PrimaryId_1));
-
-    // topology acc num => PrimaryId_2
-    Assert.assertNotNull(result.getValue(Glycosidic_topology.PrimaryId_2));
-  }
+//  @Test
+//  @Transactional
+//  public void testG00055MO() throws SparqlException {
+//    SparqlEntity e = new SparqlEntity();
+//    e.setValue(Saccharide.PrimaryId, "G00055MO");
+//    e.setValue(GlycoSequence.Sequence, "WURCS=2.0/2,2,1/[a2122h-1b_1-5_2*NCC/3=O][a2112h-1b_1-5]/1-2/a4-b1");
+//    // TODO get the proper topology of this structure, but for now confirm the id's are there.
+//    e.setValue(ConvertInsertSparql.ConvertedSequence, "WURCS=2.0/2,2,1/[a2122h-1b_1-5_2*NCC/3=O][a2112h-1b_1-5]/1-2/a4-b1");
+//    SparqlEntity result = converter.convert(e);
+//
+//    logger.debug(result);
+//    // original accession number => PrimaryId_1
+//    Assert.assertNotNull(result.getValue(Glycosidic_topology.PrimaryId_1));
+//
+//    // topology acc num => PrimaryId_2
+//    Assert.assertNotNull(result.getValue(Glycosidic_topology.PrimaryId_2));
+//  }
 }

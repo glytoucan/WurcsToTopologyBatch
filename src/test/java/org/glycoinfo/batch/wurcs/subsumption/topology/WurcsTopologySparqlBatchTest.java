@@ -185,6 +185,126 @@ public class WurcsTopologySparqlBatchTest {
     Assert.assertNull(id2);
   }
   
+  @Test
+  @Transactional
+  public void testG00029MO() throws Exception {
+    SparqlEntity onewurcs = new SparqlEntity();
+    
+    onewurcs.setValue(Saccharide.PrimaryId, "G00029MO");
+    onewurcs.setValue(ConvertSelectSparql.Sequence, "WURCS=2.0/4,7,6/[a2122h-1x_1-5_2*NCC/3=O][a2122h-1b_1-5_2*NCC/3=O][a1122h-1b_1-5][a1122h-1a_1-5]/1-2-3-4-2-4-4/a4-b1_b4-c1_c3-d1_c6-f1_e1-d2|d4_g1-f3|f6");
+    
+    String accNum = onewurcs.getValue(Saccharide.PrimaryId);
+    logger.debug("accNum:>" + accNum);
+    
+    // process it - check id's (if wurcs generated is invalid then registration process will pick it up)
+    SparqlEntity processed = processor.process(onewurcs);
+    String id1 = processed.getValue(Glycosidic_topology.PrimaryId_1);
+    String id2 = processed.getValue(Glycosidic_topology.PrimaryId_2);
+    Assert.assertEquals(accNum, id1);
+    Assert.assertEquals("G37692XE", id2);
+  }
+  
+  
+  @Test
+  @Transactional
+  public void testG00012RZ() throws Exception {
+    SparqlEntity onewurcs = new SparqlEntity();
+    
+    onewurcs.setValue(Saccharide.PrimaryId, "G00012RZ");
+    onewurcs.setValue(ConvertSelectSparql.Sequence, "WURCS=2.0/6,15,14/[a2122h-1b_1-5_2*NCC/3=O][a1122h-1b_1-5][a1122h-1a_1-5][a1221m-1a_1-5][a2112h-1b_1-5][Aad21122h-2a_2-6_5*NCC/3=O]/1-1-2-3-3-4-1-4-5-6-1-4-5-1-5/a4-b1_a6-f1_b4-c1_c3-d1_c6-e1_g3-h1_g4-i1_k3-l1_k4-m1_n4-o1_i?-j2_g1-a?|b?|c?|d?|e?|f?}_k1-a?|b?|c?|d?|e?|f?}_n1-a?|b?|c?|d?|e?|f?}");
+    
+    String accNum = onewurcs.getValue(Saccharide.PrimaryId);
+    logger.debug("accNum:>" + accNum);
+
+    // process it - check id's (if wurcs generated is invalid then registration process will pick it up)
+    SparqlEntity processed = processor.process(onewurcs);
+    String id1 = processed.getValue(Glycosidic_topology.PrimaryId_1);
+    String id2 = processed.getValue(Glycosidic_topology.PrimaryId_2);
+    Assert.assertEquals(accNum, id1);
+    Assert.assertNotNull(id1);
+//    Assert.assertEquals("G01092LE", id2);
+  }
+  
+  @Test
+  @Transactional
+  public void testG03796OG() throws Exception {
+    SparqlEntity onewurcs = new SparqlEntity();
+    
+    onewurcs.setValue(Saccharide.PrimaryId, "G03796OG");
+    onewurcs.setValue(ConvertSelectSparql.Sequence, "WURCS=2.0/3,3,2/[a2122h-1x_1-5_2*NSO/3=O/3=O][a2121A-1x_1-5_2*OSO/3=O/3=O][a2122h-1x_1-5_2*N_6*OSO/3=O/3=O]/1-2-3/a?-b1_b?-c1");
+    
+    String accNum = onewurcs.getValue(Saccharide.PrimaryId);
+    logger.debug("accNum:>" + accNum);
+
+    // process it - check id's (if wurcs generated is invalid then registration process will pick it up)
+    SparqlEntity processed = processor.process(onewurcs);
+    String id1 = processed.getValue(Glycosidic_topology.PrimaryId_1);
+    String id2 = processed.getValue(Glycosidic_topology.PrimaryId_2);
+    Assert.assertEquals(accNum, id1);
+    Assert.assertNotNull(id1);
+//    Assert.assertEquals("G01092LE", id2);
+  }
+
+  @Test
+  @Transactional
+  public void testG00026MO() throws Exception {
+    SparqlEntity onewurcs = new SparqlEntity();
+    
+    onewurcs.setValue(Saccharide.PrimaryId, "G00026MO");
+    onewurcs.setValue(ConvertSelectSparql.Sequence, "WURCS=2.0/4,5,4/[u2122h_2*NCC/3=O][a2122h-1b_1-5_2*NCC/3=O][a1122h-1b_1-5][a1122h-1a_1-5]/1-2-3-4-4/a4-b1_b4-c1_c3-d1_c6-e1");
+    
+    String accNum = onewurcs.getValue(Saccharide.PrimaryId);
+    logger.debug("accNum:>" + accNum);
+
+    // process it - check id's (if wurcs generated is invalid then registration process will pick it up)
+    SparqlEntity processed = processor.process(onewurcs);
+    String id1 = processed.getValue(Glycosidic_topology.PrimaryId_1);
+    String id2 = processed.getValue(Glycosidic_topology.PrimaryId_2);
+    Assert.assertEquals(accNum, id1);
+    Assert.assertNotNull(id1);
+//    Assert.assertEquals("G01092LE", id2);
+  }
+  
+//  G29484KH
+//  WURCS=2.0/4,6,5/[a2122h-1a_1-5][a11221h-1a_1-5][a2122h-1b_1-5_2*NCC/3=O][a2112h-1a_1-5]/1-1-1-2-3-4/a3-b1_a6-f1_b2-c1_c6-d1_d7-e1
+
+  
+  @Test
+  @Transactional
+  public void testG29484KH() throws Exception {
+    SparqlEntity onewurcs = new SparqlEntity();
+    
+    onewurcs.setValue(Saccharide.PrimaryId, "G29484KH");
+    onewurcs.setValue(ConvertSelectSparql.Sequence, "WURCS=2.0/4,6,5/[a2122h-1a_1-5][a11221h-1a_1-5][a2122h-1b_1-5_2*NCC/3=O][a2112h-1a_1-5]/1-1-1-2-3-4/a3-b1_a6-f1_b2-c1_c6-d1_d7-e1");
+    
+    String accNum = onewurcs.getValue(Saccharide.PrimaryId);
+    logger.debug("accNum:>" + accNum);
+
+    // process it - check id's (if wurcs generated is invalid then registration process will pick it up)
+    SparqlEntity processed = processor.process(onewurcs);
+    String id1 = processed.getValue(Glycosidic_topology.PrimaryId_1);
+    String id2 = processed.getValue(Glycosidic_topology.PrimaryId_2);
+    Assert.assertEquals(accNum, id1);
+    Assert.assertNotNull(id1);
+//    Assert.assertEquals("G01092LE", id2);
+  }
+  
+  @Test
+  @Transactional
+  public void testG95507UG() throws Exception {
+    SparqlEntity onewurcs = new SparqlEntity();
+    
+    onewurcs.setValue(Saccharide.PrimaryId, "G95507UG");
+    onewurcs.setValue(ConvertSelectSparql.Sequence, "WURCS=2.0/1,3,4/[a2122h-1a_1-5_2*OC_3*OC_6*N]/1-1-1/a1-c4_a4-b1_b4-c1_c1-c4~4:6");
+    
+    String accNum = onewurcs.getValue(Saccharide.PrimaryId);
+    logger.debug("accNum:>" + accNum);
+
+    // process it - check id's (if wurcs generated is invalid then registration process will pick it up)
+    SparqlEntity processed = processor.process(onewurcs);
+    Assert.assertNull(processed);
+  }
+  
   @Bean
   TripleStoreProperties getTripleStoreProperties() {
     return new TripleStoreProperties();
