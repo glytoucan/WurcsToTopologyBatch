@@ -68,8 +68,8 @@
 			<url>http://nexus.glycoinfo.org/content/groups/public</url>
 		</repository>
 		<repository>
-			<id>bintray-plugins</id>
-			<name>bintray-plugins</name>
+			<id>bintray</id>
+			<name>bintray</name>
 			<url>http://jcenter.bintray.com</url>
 		</repository>
 	</repositories>
