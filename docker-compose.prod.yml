@@ -5,9 +5,9 @@ services:
     command: echo "topology package ready"
     volumes:
       - /data
-  iupac:
+  topology:
     image: java:8u91-jdk
     working_dir: /data
-    command: java -jar topoloogy-${BATCH_VERSION}.jar
+    command: java -jar topology-${BATCH_VERSION}.jar
     volumes_from:
       - topologypackage
