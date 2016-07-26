@@ -1,13 +1,13 @@
 version: '2'
 services:
   topologypackage:
-    image: glycoinfo.org:5000/topology_batch:v${IUPAC_VERSION}
+    image: glycoinfo.org:5000/topology_batch:v${BATCH_VERSION}
     command: echo "topology package ready"
     volumes:
       - /data
   iupac:
     image: java:8u91-jdk
     working_dir: /data
-    command: java -jar topoloogy-${TOPOLOGY_VERSION}.jar
+    command: java -jar topoloogy-${BATCH_VERSION}.jar
     volumes_from:
       - topologypackage
