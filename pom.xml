@@ -60,28 +60,28 @@
 	</build>
 	<repositories>
 		<repository>
-			<id>spring-releases</id>
-			<url>http://repo.spring.io/libs-release</url>
+			<id>bintray</id>
+			<name>bintray</name>
+			<url>http://jcenter.bintray.com</url>
 		</repository>
 		<repository>
 			<id>glycoinfo</id>
 			<url>http://nexus.glycoinfo.org/content/groups/public</url>
 		</repository>
 		<repository>
-			<id>bintray</id>
-			<name>bintray</name>
-			<url>http://jcenter.bintray.com</url>
+			<id>spring-releases</id>
+			<url>http://repo.spring.io/libs-release</url>
 		</repository>
 	</repositories>
 	<pluginRepositories>
 		<pluginRepository>
-			<id>spring-releases</id>
-			<url>http://repo.spring.io/libs-release</url>
-		</pluginRepository>
-		<pluginRepository>
 			<id>bintray-plugins</id>
 			<name>bintray-plugins</name>
 			<url>http://jcenter.bintray.com</url>
+		</pluginRepository>
+		<pluginRepository>
+			<id>spring-releases</id>
+			<url>http://repo.spring.io/libs-release</url>
 		</pluginRepository>
 	</pluginRepositories>
 	<distributionManagement>
@@ -103,7 +103,7 @@
 	<properties>
 		<changelog.fileUri>${changelog.github.fileUri}</changelog.fileUri>
 		<changelog.revision.fileUri>${changelog.revision.github.fileUri}</changelog.revision.fileUri>
-		<project.scm.url>https://github.com/glytoucan/wurcstotopologybatch</project.scm.url>
+		<project.scm.url>https://github.com/glytoucan/WurcsToTopologyBatch</project.scm.url>
 		<cobertura.base.package>org.glycoinfo.batch.glyconvert.wurcs.topology</cobertura.base.package>
 		<inceptionYear>2014</inceptionYear>
 		<repository.domain>nexus.glycoinfo.org/content/sites/project/glytoucan/batch.wurcs.topology</repository.domain>
