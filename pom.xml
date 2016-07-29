@@ -108,7 +108,7 @@
 		<inceptionYear>2014</inceptionYear>
 		<repository.domain>nexus.glycoinfo.org/content/sites/project/glytoucan/batch.wurcs.topology</repository.domain>
 		<repository.user>glytoucan</repository.user>
-		<repository.name>wurcstotopologybatch</repository.name>
+		<repository.name>WurcsToTopologyBatch</repository.name>
 		<googleAnalyticsAccountId>UA-54566807-1</googleAnalyticsAccountId>
 	</properties>
 	<dependencyManagement>
